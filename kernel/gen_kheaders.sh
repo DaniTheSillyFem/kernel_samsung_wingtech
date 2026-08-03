@@ -4,6 +4,8 @@
 # This script generates an archive consisting of kernel headers
 # for CONFIG_IKHEADERS.
 set -e
+trap 'echo "FAILED at line $LINENO"' ERR
+set -ex
 sfile="$(readlink -f "$0")"
 outdir="$(pwd)"
 tarfile=$1
