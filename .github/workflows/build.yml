@@ -1,0 +1,75 @@
+name: Build rsuntk A04 Kernel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v7.0.1
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            bc \
+            bison \
+            build-essential \
+            ccache \
+            cpio \
+            curl \
+            flex \
+            git \
+            libelf-dev \
+            libssl-dev \
+            lld \
+            python3 \
+            unzip \
+            xz-utils \
+            zip
+
+      - name: Download Google Clang r574158
+        run: |
+          mkdir clang
+          cd clang
+
+          curl -L \
+          https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/508ea7dd0d8f681904d0422e98af9613aaabf180/clang-r574158.tar.gz \
+          | tar -xz
+
+      - name: Set environment
+        run: |
+          echo "$GITHUB_WORKSPACE/clang/bin" >> $GITHUB_PATH
+
+      - name: Build kernel
+        run: |
+          export ARCH=arm64
+          export SUBARCH=arm64
+
+          make ARCH=arm64 \
+            LLVM=1 \
+            LLVM_IAS=1 \
+            CC=clang \
+            rsuntk.config rsuntk-a04_defconfig
+
+          make -j$(nproc) \
+            ARCH=arm64 \
+            LLVM=1 \
+            LLVM_IAS=1 \
+            CC=clang
+
+      - name: Upload build outputs
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: atlas-kernel
+          path: |
+            .config
+            arch/arm64/boot/Image*
+            arch/arm64/boot/dts/**/*.dtb
+            arch/arm64/boot/dts/**/*.dtbo
