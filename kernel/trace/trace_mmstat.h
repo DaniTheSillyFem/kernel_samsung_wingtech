@@ -82,7 +82,7 @@ DEFINE_EVENT(mmstat_trace_arrayset, mmstat_trace_proc,
 #endif /* __TRACE_MMSTAT_H */
 
 #undef TRACE_INCLUDE_PATH
-#define TRACE_INCLUDE_PATH .
+#define TRACE_INCLUDE_PATH ../kernel/trace
 #undef TRACE_INCLUDE_FILE
 #define TRACE_INCLUDE_FILE trace_mmstat
 
