@@ -693,7 +693,7 @@ int gcore_headset_notifier_callback(
 	unsigned long event,
 	void *data)
 {
-	GTP_ERROR("gcore_headset_nodifier_callback start event = %d\n",event);
+	GTP_ERROR("gcore_headset_nodifier_callback start event = %lu\n",event);
 	if(event == FW_HEADSET_PLUG)
 		fn_data.gdev->tpd_headset_flag = 1;
 	else if (event == FW_HEADSET_UNPLUG)
