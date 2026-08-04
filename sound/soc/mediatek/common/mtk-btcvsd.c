@@ -361,7 +361,7 @@ static int btcvsd_tx_clean_buffer(struct mtk_btcvsd_snd *bt)
 
 	dst = (void *)ap_addr_tx;
 
-	dev_info(bt->dev, "%s(), clean addr 0x%lx\n", __func__, ap_addr_tx);
+	dev_info(bt->dev, "%s(), clean addr 0x%x\n", __func__, ap_addr_tx);
 
 	mtk_btcvsd_snd_data_transfer(BT_SCO_DIRECT_ARM2BT,
 				     bt->tx->temp_packet_buf, dst,
