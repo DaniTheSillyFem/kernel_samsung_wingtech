@@ -450,7 +450,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror=return-type -Wno-format-security \
 		   -Wno-int-conversion -Wno-default-const-init-field-unsafe \
 		   -Wno-gcc-compat -Wno-unused-function -Wno-format-extra-args \
-		   -Wno-gnu-variable-sized-type-not-at-end \
+		   -Wno-gnu-variable-sized-type-not-at-end -Wno-error=unused-but-set-variable \
 		   -Wno-initializer-overrides -Wno-unused-but-set-variable -std=gnu89
 KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_AFLAGS_KERNEL :=
