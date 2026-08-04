@@ -449,7 +449,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Werror=return-type -Wno-format-security \
 		   -Wno-int-conversion -Wno-default-const-init-field-unsafe \
-           -Wno-gcc-compat -std=gnu89
+           -Wno-gcc-compat -Wno-unused-function std=gnu89
 KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
