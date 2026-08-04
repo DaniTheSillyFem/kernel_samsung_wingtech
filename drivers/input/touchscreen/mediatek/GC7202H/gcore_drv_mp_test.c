@@ -1491,7 +1491,7 @@ int dump_mp_info_to_csv_file(const char *filepath, int flags)
 #if defined(CONFIG_TOUCH_DRIVER_INTERFACE_I2C)
 		scnprintf(speed, sizeof(speed), "400K");
 #elif defined(CONFIG_TOUCH_DRIVER_INTERFACE_SPI)
-		scnprintf(speed, sizeof(speed), "%lu", g_mp_data->gdev->bus_device->max_speed_hz);
+		scnprintf(speed, sizeof(speed), "%u", g_mp_data->gdev->bus_device->max_speed_hz);
 #endif
 	len = scnprintf(linebuf, sizeof(linebuf), "Interface speed:, %s\n", speed);
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 14, 0)
