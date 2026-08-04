@@ -449,9 +449,9 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Werror=return-type -Wno-format-security \
 		   -Wno-int-conversion -Wno-default-const-init-field-unsafe \
-		   -Wno-gcc-compat -Wno-unused-function \
-		   -Wno-format-extra-args -Wno-gnu-variable-sized-type-not-at-end \
-		   -std=gnu89
+		   -Wno-gcc-compat -Wno-unused-function -Wno-format-extra-args \
+		   -Wno-gnu-variable-sized-type-not-at-end \
+		   -Wno-initializer-overrides -std=gnu89
 KBUILD_CPPFLAGS := -D__KERNEL__
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
