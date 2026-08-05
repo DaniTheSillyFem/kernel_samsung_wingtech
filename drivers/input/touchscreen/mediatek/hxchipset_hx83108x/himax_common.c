@@ -2223,7 +2223,7 @@ static int himax_ts_event_check(struct himax_ts_data *ts,
 					private_ts->gesture_fail_flag = false;
 					private_ts->update_fw_fail = 0;
 					private_ts->vsn_flag = 1;
-					himax_mcu_vsn_recovery();//À­VSN
+					himax_mcu_vsn_recovery();//ï¿½ï¿½VSN
 					I("%s: recovery by unnormal gesture\n", __func__ );
 				}				
 			}else {
@@ -3787,7 +3787,7 @@ int himax_headset_notifier_callback(
 	unsigned long event,
 	void *data)
 {
-	I("himax_headset_nodifier_callback start event = %d\n",event);
+	I("himax_headset_nodifier_callback start event = %lu\n",event);
 	if(event == 9)
 		private_ts->hx_headset_flag = 1;
 	else if (event == 10)
