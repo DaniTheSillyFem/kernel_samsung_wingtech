@@ -2,9 +2,6 @@ name: Build rsuntk A04 Kernel
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/build.yml
 
 jobs:
   build:
@@ -60,6 +57,8 @@ jobs:
             LLVM_IAS=1 \
             CC=clang \
             rsuntk-a04_defconfig
+
+          grep KSU .config
 
           make -j$(nproc) \
             ARCH=arm64 \
