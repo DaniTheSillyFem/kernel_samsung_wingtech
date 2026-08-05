@@ -3536,7 +3536,7 @@ int hx_0f_op_file_dirly(char *file_name)
 	if (reqret < 0) {
 #if defined(HX_FIRMWARE_HEADER)
 		if (!g_embedded_fw.data) {
-			E("%s: g_embedded_fw is NULL\n");
+			E("%s: g_embedded_fw is NULL\n", __func__);
 			goto END;
 		}
 		fw = &g_embedded_fw;
