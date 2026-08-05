@@ -447,7 +447,7 @@ KBUILD_AFLAGS   := -D__ASSEMBLY__ -fno-PIE
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE \
 		   -Werror-implicit-function-declaration \
-		   -Werror=return-type -Wno-format-security \
+		   -Werror=return-type -Wno-format-security -Wno-default-const-init-var-unsafe \
 		   -Wno-int-conversion -Wno-default-const-init-field-unsafe \
 		   -Wno-gcc-compat -Wno-unused-function -Wno-format-extra-args \
 		   -Wno-gnu-variable-sized-type-not-at-end -Wno-error=unused-but-set-variable \
