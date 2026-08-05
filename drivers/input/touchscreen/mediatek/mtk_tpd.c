@@ -583,7 +583,7 @@ static int tpd_fb_notifier_callback(
 	if ((event == FB_EVENT_BLANK) || (event == FB_EARLY_EVENT_BLANK)) {
 
 	    blank = *(int *)evdata->data;
-	    TPD_DMESG("fb_notify(blank=%d, event=%d)\n", blank, event);
+	    TPD_DMESG("fb_notify(blank=%d, event=%lu)\n", blank, event);
 
         if(event == FB_EVENT_BLANK) {
 		    if(blank == FB_BLANK_UNBLANK) {
