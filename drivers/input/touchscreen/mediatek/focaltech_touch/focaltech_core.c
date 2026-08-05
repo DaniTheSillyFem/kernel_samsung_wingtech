@@ -1683,7 +1683,7 @@ void tpd_focal_suspend(struct device *dev)
 int focal_headset_notifier_callback(struct notifier_block *self, unsigned long event, void *data){
     struct fts_ts_data *ts_data = fts_data;
 
-    FTS_ERROR("focal_headset_nodifier_callback start event = %d\n",event);
+    FTS_ERROR("focal_headset_nodifier_callback start event = %lu\n",event);
 
     if (event == FTS_HEADSET_PLUG) {
         ts_data->fts_head_set = 1;
