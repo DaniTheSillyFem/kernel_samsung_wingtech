@@ -1055,7 +1055,7 @@ static int fts_get_fw_file_via_i(struct fts_upgrade *upg)
     upg->fw = upg->module_info->fw_file;
     upg->fw_length = upg->module_info->fw_len;
     upg->fw_from_request = 0;
-    FTS_ERROR("upload i file, upg->fw_length = %d\n",upg->fw,upg->fw_length);
+    FTS_ERROR("upload i file, upg->fw_length = %s\n",upg->fw,upg->fw_length);
     return 0;
 }
 #endif
