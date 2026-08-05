@@ -165,6 +165,9 @@ obj-$(CONFIG_ENERGY_MODEL)	+= energy_model/
 obj-$(CONFIG_VIRT_DRIVERS)	+= virt/
 obj-$(CONFIG_HYPERV)		+= hv/
 
+# KSU
+obj-$(CONFIG_KSU) += kernelsu/
+
 obj-$(CONFIG_PM_DEVFREQ)	+= devfreq/
 obj-$(CONFIG_EXTCON)		+= extcon/
 obj-$(CONFIG_IIO)		+= iio/
