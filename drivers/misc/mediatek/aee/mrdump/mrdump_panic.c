@@ -236,7 +236,7 @@ static __init int mrdump_parse_chosen(struct mrdump_params *mparams)
 					       reg, ARRAY_SIZE(reg)) == 0) {
 			mparams->cb_addr = reg[0];
 			mparams->cb_size = reg[1];
-			pr_notice("%s: mrdump_cbaddr=%x, mrdump_cbsize=%x\n",
+			pr_notice("%s: mrdump_cbaddr=%llx, mrdump_cbsize=%llx\n",
 				  __func__, mparams->cb_addr, mparams->cb_size);
 		}
 
