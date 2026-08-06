@@ -24,7 +24,7 @@ extern "C" {
 #include <linux/topology.h>
 
 #include "mtk_ppm_api.h"
-#include "mtk_ppm_platform.h"
+#include "../src/mach/mt6765/mtk_ppm_platform.h"
 #include "mtk_ppm_ipi.h"
 
 /*==============================================================*/
