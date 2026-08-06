@@ -2,6 +2,7 @@ name: Build rsuntk A04 Kernel
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
