@@ -1040,7 +1040,7 @@ static int ppm_main_pdrv_remove(struct platform_device *pdev)
 static int __init ppm_main_init(void)
 {
 	int ret = 0;
-	struct device_node *cn, *map, *c, *d;
+	struct device_node *cn = NULL, *map = NULL, *c = NULL, *d = NULL;
 	int max, min;
 	char name[10];
 	int i = 0;
